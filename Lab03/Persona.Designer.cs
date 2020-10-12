@@ -32,6 +32,9 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dgvListado = new System.Windows.Forms.DataGridView();
+            this.btnListarDataReader = new System.Windows.Forms.Button();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +62,7 @@
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNombre
             // 
@@ -70,16 +74,43 @@
             // dgvListado
             // 
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(12, 56);
+            this.dgvListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FirstName,
+            this.LastName});
+            this.dgvListado.Location = new System.Drawing.Point(12, 101);
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.Size = new System.Drawing.Size(360, 400);
             this.dgvListado.TabIndex = 3;
+            // 
+            // btnListarDataReader
+            // 
+            this.btnListarDataReader.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnListarDataReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnListarDataReader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnListarDataReader.Location = new System.Drawing.Point(242, 51);
+            this.btnListarDataReader.Name = "btnListarDataReader";
+            this.btnListarDataReader.Size = new System.Drawing.Size(130, 23);
+            this.btnListarDataReader.TabIndex = 4;
+            this.btnListarDataReader.Text = "Buscar  por DataReader";
+            this.btnListarDataReader.UseVisualStyleBackColor = false;
+            this.btnListarDataReader.Click += new System.EventHandler(this.btnListarDataReader_Click);
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
             // 
             // Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 479);
+            this.ClientSize = new System.Drawing.Size(384, 513);
+            this.Controls.Add(this.btnListarDataReader);
             this.Controls.Add(this.dgvListado);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnBuscar);
@@ -99,5 +130,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DataGridView dgvListado;
+        private System.Windows.Forms.Button btnListarDataReader;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
     }
 }
